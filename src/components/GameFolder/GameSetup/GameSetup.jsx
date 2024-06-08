@@ -38,9 +38,15 @@ const GameSetup = () => {
       )}
       {displayGame &&
         (player1Turn ? (
-          <Player1GameView setPlayer1Turn={setPlayer1Turn} />
+          <Player1GameView
+            setPlayer1Turn={setPlayer1Turn}
+            player2Cells={player2Cells}
+          />
         ) : (
-          <Player2GameView setPlayer1Turn={setPlayer1Turn} />
+          <Player2GameView
+            setPlayer1Turn={setPlayer1Turn}
+            player1Cells={player1Cells}
+          />
         ))}
     </div>
   );
