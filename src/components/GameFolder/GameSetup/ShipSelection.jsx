@@ -4,7 +4,6 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
   function handleShipSelection(e) {
     setShipSelected(e.target.value);
   }
-
   return (
     <div
       className="w-72 my-5"
