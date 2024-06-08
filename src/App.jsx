@@ -1,7 +1,9 @@
 import React from "react";
 
 const App = () => {
-  return <div>Basic Pursuit React Starter</div>;
+  return <div>
+    <h1>Test</h1>
+  </div>;
 };
 
 export default App;
