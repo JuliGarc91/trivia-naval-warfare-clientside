@@ -22,7 +22,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
               value="carrier"
               onChange={handleShipSelection}
             />
-            <label htmlFor="carrier">Carrier ⬛ ⬛ ⬛ ⬛ ⬛</label>
+            <label htmlFor="carrier" className="bg-navy/40 p-1 ml-1 rounded-md">Carrier ⬛ ⬛ ⬛ ⬛ ⬛</label>
           </div>
           <div className="bg-blue-500 p-1">
             <input
@@ -32,7 +32,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
               value="battleship"
               onChange={handleShipSelection}
             />
-            <label htmlFor="battleship">Battleship ⬛ ⬛ ⬛ ⬛ </label>
+            <label htmlFor="battleship" className="bg-navy/40 p-1 ml-1 rounded-md">Battleship ⬛ ⬛ ⬛ ⬛ </label>
           </div>
           <div className="bg-green-700 p-1">
             <input
@@ -42,7 +42,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
               value="cruiser"
               onChange={handleShipSelection}
             />
-            <label htmlFor="cruiser">Cruiser ⬛ ⬛ ⬛ </label>
+            <label htmlFor="cruiser" className="bg-navy/40 p-1 ml-1 rounded-md">Cruiser ⬛ ⬛ ⬛ </label>
           </div>
           <div className="bg-purple-700 p-1">
             <input
@@ -52,7 +52,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
               value="submarine"
               onChange={handleShipSelection}
             />
-            <label htmlFor="submarine">Submarine ⬛ ⬛ ⬛ </label>
+            <label htmlFor="submarine" className="bg-navy/40 p-1 ml-1 rounded-md">Submarine ⬛ ⬛ ⬛ </label>
           </div>
           <div className="bg-yellow-300 p-1">
             <input
@@ -62,7 +62,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
               value="destroyer"
               onChange={handleShipSelection}
             />
-            <label htmlFor="destroyer">Destroyer ⬛ ⬛ </label>
+            <label htmlFor="destroyer" className="bg-navy/40 p-1 ml-1 rounded-md">Destroyer ⬛ ⬛ </label>
           </div>
         </fieldset>
       </div>

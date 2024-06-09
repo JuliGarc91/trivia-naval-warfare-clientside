@@ -88,7 +88,7 @@ const Player1GameView = ({
   }
 
   return (
-    <div className="bg-zinc-700/90 p-8 flex flex-col">
+    <div className="bg-zinc-700/90 p-8 flex flex-col border-4 border-black">
       <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 1 Turn</h1>
       <br/>
       <div className="flex justify-center bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
