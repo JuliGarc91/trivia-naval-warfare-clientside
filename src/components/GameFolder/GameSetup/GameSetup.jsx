@@ -41,6 +41,7 @@ const GameSetup = () => {
           <Player1GameView
             setPlayer1Turn={setPlayer1Turn}
             player2Cells={player2Cells}
+            setPlayer2Cells={setPlayer2Cells}
           />
         ) : (
           <Player2GameView
