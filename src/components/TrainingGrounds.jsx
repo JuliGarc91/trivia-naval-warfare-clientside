@@ -1,5 +1,7 @@
-import RssFeed from "./RssFeed";
-
+import React from 'react'
+import RssFeed from './RssFeed'
+import '../App.css'
+// alt bg: https://videos.pexels.com/video-files/13740590/13740590-hd_1280_720_24fps.mp4
 const TrainingGrounds = () => {
   return (
     <>
@@ -21,4 +23,4 @@ const TrainingGrounds = () => {
   )
 }
 
-export default TrainingGrounds
+export default TrainingGrounds;
