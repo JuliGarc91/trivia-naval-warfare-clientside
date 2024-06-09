@@ -84,6 +84,7 @@ const Player1GameView = ({
     <div className="bg-zinc-700/90 p-8 flex flex-col">
       <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 2</h1>
       <br/>
+      {/* if bg is in next line it's behind the board not sure why it's not able to color the cells */}
       <div className="flex justify-center">
         <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10 bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
           {BOARD_ARR.map((row, rowIndex) => (
