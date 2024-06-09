@@ -24,6 +24,9 @@ const GameSetup = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const [winner, setWinner] = useState("");
 
+  const [player1ClickedCells, setPlayer1ClickedCells] = useState([]);
+  const [player2ClickedCells, setPlayer2ClickedCells] = useState([]);
+
   function switchTurnWithDelay() {
     setTimeout(() => {
       setPlayer1Turn(!player1Turn);
@@ -67,6 +70,8 @@ const GameSetup = () => {
             switchTurnWithDelay={switchTurnWithDelay}
             setGameFinished={setGameFinished}
             setWinner={setWinner}
+            player1ClickedCells={player1ClickedCells}
+            setPlayer1ClickedCells={setPlayer1ClickedCells}
           />
         ) : (
           <Player2GameView
@@ -79,6 +84,8 @@ const GameSetup = () => {
             switchTurnWithDelay={switchTurnWithDelay}
             setGameFinished={setGameFinished}
             setWinner={setWinner}
+            player2ClickedCells={player2ClickedCells}
+            setPlayer2ClickedCells={setPlayer2ClickedCells}
           />
         ))}
       {gameFinished && <GameOver winner={winner} />}

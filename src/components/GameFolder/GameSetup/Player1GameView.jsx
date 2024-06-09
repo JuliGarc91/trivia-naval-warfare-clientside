@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BOARD_ARR } from "./gameInfo";
 
 const Player1GameView = ({
@@ -13,9 +13,28 @@ const Player1GameView = ({
   switchTurnWithDelay,
   setGameFinished,
   setWinner,
+  player1ClickedCells,
+  setPlayer1ClickedCells,
 }) => {
+  // const [isDisabled, setIsDisabled] = useState(false);
+
   function handleAttack(rowIndex, cellIndex) {
+    // Check to see if the cell has already been selected, if it has return nothing since its an invalid cell
+    if (
+      player1ClickedCells.some(
+        (coordinates) =>
+          coordinates.row === rowIndex && coordinates.cell === cellIndex
+      )
+    ) {
+      return;
+    }
+
+    // setIsDisabled(true);
     let hit = false;
+    setPlayer1ClickedCells((prevCells) => [
+      ...prevCells,
+      { row: rowIndex, cell: cellIndex },
+    ]);
     if (player2Cells.length > 0) {
       for (const coordinates of player2Cells) {
         if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
@@ -75,6 +94,7 @@ const Player1GameView = ({
                   key={cellIndex}
                   className="border-2 border-black text-center text-transparent"
                   onClick={() => handleAttack(rowIndex, cellIndex)}
+                  // onClick={()=> !isDisabled ? handleAttack(rowIndex, cellIndex): null}
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}

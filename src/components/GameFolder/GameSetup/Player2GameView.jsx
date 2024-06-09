@@ -13,9 +13,26 @@ const Player1GameView = ({
   switchTurnWithDelay,
   setGameFinished,
   setWinner,
+  player2ClickedCells,
+  setPlayer2ClickedCells,
 }) => {
   function handleAttack(rowIndex, cellIndex) {
     let hit = false;
+
+    if (
+      player2ClickedCells.some(
+        (coordinates) =>
+          coordinates.row === rowIndex && coordinates.cell === cellIndex
+      )
+    ) {
+      return;
+    }
+
+    setPlayer2ClickedCells((prev) => [
+      ...prev,
+      { row: rowIndex, cell: cellIndex },
+    ]);
+
     if (player1Cells.length > 0) {
       for (const coordinates of player1Cells) {
         if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
