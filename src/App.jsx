@@ -7,12 +7,17 @@ import Nav from "./components/Nav"
 import GameSetup from "./components/GameFolder/GameSetup/GameSetup";
 import Trivia from "./components/Trivia";
 import TrainingGrounds from "./components/TrainingGrounds";
+import Footer from "./components/Footer";
 
 const App = () => {
 
   const NavBarWrapper = () => {
     const location = useLocation()
     return location.pathname !== "/" && <Nav />
+  }
+  const FooterWrapper = () => {
+    const location = useLocation()
+    return location.pathname !== "/" && <Footer />
   }
     
   return (
@@ -28,6 +33,7 @@ const App = () => {
         <Route path="/training" element={<TrainingGrounds/>}/>
       </Routes>
     </div>
+    <FooterWrapper />
   </>
   );
 };
