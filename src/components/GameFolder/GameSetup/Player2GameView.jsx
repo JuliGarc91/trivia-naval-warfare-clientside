@@ -88,7 +88,7 @@ const Player1GameView = ({
   }
 
   return (
-    <div className="bg-zinc-700/90 p-8 flex flex-col">
+    <div className="bg-zinc-700/90 p-8 flex flex-col border-4 border-black">
       <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 2 Turn</h1>
       <br/>
       {/* if bg is in next line it's behind the board not sure why it's not able to color the cells */}
