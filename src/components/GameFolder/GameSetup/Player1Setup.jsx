@@ -36,7 +36,7 @@ const Player1Setup = ({
       />
       <div>
         <button
-          className="border-2 border-black p-2 mr-2"
+          className="bg-light-navy border-2 border-black p-2 mr-2"
           onClick={() => setAxisShipDirection("horizontal")}
           style={
             axisShipDirection === "horizontal"
@@ -47,7 +47,7 @@ const Player1Setup = ({
           Horizontal
         </button>
         <button
-          className="border-2 border-black p-2 mr-2"
+          className="border-2 bg-light-navy border-black p-2 mr-2"
           onClick={() => setAxisShipDirection("vertical")}
           style={
             axisShipDirection === "vertical"

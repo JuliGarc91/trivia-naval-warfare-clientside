@@ -6,7 +6,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
   }
   return (
     <div
-      className="w-72 my-5"
+      className="w-72 my-5 bg-white"
       style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}
     >
       <div className="border-4 border-black">
