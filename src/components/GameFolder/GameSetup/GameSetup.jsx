@@ -23,7 +23,7 @@ const GameSetup = () => {
   function switchTurnWithDelay() {
     setTimeout(() => {
       setPlayer1Turn(!player1Turn);
-    }, 5000);
+    }, 1000);
   }
 
   return (
@@ -63,8 +63,14 @@ const GameSetup = () => {
           />
         ) : (
           <Player2GameView
-            setPlayer1Turn={setPlayer1Turn}
+            // setPlayer1Turn={setPlayer1Turn}
             player1Cells={player1Cells}
+            setPlayer1Cells={setPlayer1Cells}
+            player2HitCoordinates={player2HitCoordinates}
+            setPlayer2HitCoordinates={setPlayer2HitCoordinates}
+            player2MissCoordinates={player2MissCoordinates}
+            setPlayer2MissCoordinates={setPlayer2MissCoordinates}
+            switchTurnWithDelay={switchTurnWithDelay}
             // hitCoordinates={hitCoordinates}
             // missCoordinates={missCoordinates}
           />
