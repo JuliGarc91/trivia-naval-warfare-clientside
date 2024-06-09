@@ -4,6 +4,7 @@ import Landing from "./components/Landing";
 import About_Mission from "./components/About_Mission";
 import HowTo from "./components/Howto";
 import GameSetup from "./components/GameFolder/GameSetup/GameSetup";
+import Trivia from "./components/Trivia";
 
 const App = () => {
   return (
@@ -14,8 +15,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/game" element={<GameSetup />} />
-        <Route path="/howto" element={<HowTo />}/>
-        <Route path="/mission_&_about" element={<About_Mission />}/>
+        <Route path="/howto" element={<HowTo />} />
+        <Route path="/mission_&_about" element={<About_Mission />} />
+        <Route path="/trivia" element={<Trivia />} />
       </Routes>
     </div>
   );
