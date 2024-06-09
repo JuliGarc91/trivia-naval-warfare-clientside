@@ -22,17 +22,17 @@ const App = () => {
     
   return (
   <>
-      <NavBarWrapper />
-    <div>
-     <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/game" element={<GameSetup />} />
-        <Route path="/howto" element={<HowTo />} />
-        <Route path="/mission_&_about" element={<About_Mission />} />
-        <Route path="/trivia" element={<Trivia />} />
-        <Route path="/training" element={<TrainingGrounds/>}/>
-      </Routes>
-    </div>
+    <NavBarWrapper />
+      <div>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/game" element={<GameSetup />} />
+          <Route path="/howto" element={<HowTo />} />
+          <Route path="/mission_&_about" element={<About_Mission />} />
+          <Route path="/trivia" element={<Trivia />} />
+          <Route path="/training" element={<TrainingGrounds/>}/>
+        </Routes>
+      </div>
     <FooterWrapper />
   </>
   );

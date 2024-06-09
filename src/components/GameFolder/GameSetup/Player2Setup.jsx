@@ -37,30 +37,30 @@ const Player2Setup = ({
   }
 
   return (
-    <div style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
-      <h1>Player2Setup</h1>
+    <div className="bg-zinc-700/80 border-black border-4 p-8" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
+      <h1 className="text-center text-6xl">Player2Setup</h1>
       <ShipSelection
         shipSelected={shipSelected}
         setShipSelected={setShipSelected}
       />
-      <div>
+      <div className="flex justify-center">
         <button
-          className="border-2 border-black p-2 mr-2"
+          className="bg-light-navy border-2 border-black p-2 mr-2"
           onClick={() => setAxisShipDirection("horizontal")}
           style={
             axisShipDirection === "horizontal"
-              ? { backgroundColor: "#d3d3d3", boxShadow: "5px 5px 5px black" }
+              ? { backgroundColor: "#d3d3d3", color: "black", boxShadow: "5px 5px 5px black" }
               : null
           }
         >
           Horizontal
         </button>
         <button
-          className="border-2 border-black p-2 mr-2"
+          className="bg-light-navy border-2 border-black p-2 mr-2"
           onClick={() => setAxisShipDirection("vertical")}
           style={
             axisShipDirection === "vertical"
-              ? { backgroundColor: "#d3d3d3", boxShadow: "5px 5px 5px black" }
+              ? { backgroundColor: "#d3d3d3",color: "black", boxShadow: "5px 5px 5px black" }
               : null
           }
         >
@@ -73,7 +73,8 @@ const Player2Setup = ({
           Clear Board
         </button>
       </div>
-      <div>
+      <br/>
+      <div className="flex justify-center">
         {player2Cells.length === 17 && (
           <button
             className="border-2 border-black p-2 mt-2 bg-green-400"
@@ -83,6 +84,7 @@ const Player2Setup = ({
           </button>
         )}
       </div>
+      <br/>
       <Player2SetupBoard
         player2Ready={player2Ready}
         setPlayer2Ready={setPlayer2Ready}

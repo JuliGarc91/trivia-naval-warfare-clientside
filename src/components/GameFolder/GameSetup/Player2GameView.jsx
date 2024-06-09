@@ -84,25 +84,32 @@ const Player1GameView = ({
         return "grey";
       }
     }
-    return "white";
+    return "transparent";
   }
 
   return (
-    <div>
-      <h1>Player2GameView</h1>
+    <div className="bg-zinc-700/90 p-8 flex flex-col">
+      <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 2 Turn</h1>
+      <br/>
+      {/* if bg is in next line it's behind the board not sure why it's not able to color the cells */}
       <div className="flex justify-center">
-        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10">
+        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10 bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
           {BOARD_ARR.map((row, rowIndex) => (
             <div className="contents" key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <div
                   key={cellIndex}
+// section in question ------------------------------------------------------------------------------------------------------------------------------------
+                  className="border-2 border-black text-center text-transparent bg-transparent"
+                  onClick={() => handleAttack(rowIndex, cellIndex)}
+
                   className="border-2 border-black text-center text-transparent"
                   onClick={() =>
                     !playerSelectedCell
                       ? handleAttack(rowIndex, cellIndex)
                       : null
                   }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}

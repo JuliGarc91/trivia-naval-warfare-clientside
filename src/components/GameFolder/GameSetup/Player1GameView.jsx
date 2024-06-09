@@ -84,25 +84,32 @@ const Player1GameView = ({
         return "grey";
       }
     }
-    return "white";
+    return "transparent";
   }
 
   return (
-    <div>
-      <h1>Player1GameView</h1>
-      <div className="flex justify-center">
-        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10">
+    <div className="bg-zinc-700/90 p-8 flex flex-col">
+      <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 1 Turn</h1>
+      <br/>
+      <div className="flex justify-center bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
+        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10 bg-cover">
           {BOARD_ARR.map((row, rowIndex) => (
-            <div className="contents" key={rowIndex}>
+            <div className="contents bg-transparent" key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <div
                   key={cellIndex}
+// check section if ok up until line 112 ------------------------------------------------------------------------------------------------------------------------------------
+                   className="border-2 border-black text-center text-transparent bg-transparent"
+                   onClick={() => handleAttack(rowIndex, cellIndex)}
+                  // onClick={()=> !isDisabled ? handleAttack(rowIndex, cellIndex): null}
+
                   className="border-2 border-black text-center text-transparent"
                   onClick={() =>
                     !playerSelectedCell
                       ? handleAttack(rowIndex, cellIndex)
                       : null
                   }
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}

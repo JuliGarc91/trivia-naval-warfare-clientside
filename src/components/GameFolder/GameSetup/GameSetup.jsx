@@ -34,8 +34,9 @@ const GameSetup = () => {
   }
 
   return (
-    <div>
-      <h1>GameSetup</h1>
+    <>
+    {/* the space is from margin bottom in nav bar fix later */}
+    <div className="h-screen bg-cover flex justify-center items-center text-white" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717950846/battleship%20app/controllers.jpg')" }}>
       {!player1Ready && !displayGame && (
         <Player1Setup
           player1Ready={player1Ready}
@@ -90,6 +91,7 @@ const GameSetup = () => {
         ))}
       {gameFinished && <GameOver winner={winner} />}
     </div>
+    </>
   );
 };
 
