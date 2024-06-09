@@ -50,6 +50,9 @@ const Player1GameView = ({
       for (const coordinates of player1Cells) {
         if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
           hit = true;
+          if (hit && player1Cells.length === 1) {
+            console.log("Game Over Player 2 Wins");
+          }
           setPlayer2HitCoordinates((prev) => [...prev, coordinates]);
           const updatedCoordinates = player1Cells.filter(
             (location) =>
