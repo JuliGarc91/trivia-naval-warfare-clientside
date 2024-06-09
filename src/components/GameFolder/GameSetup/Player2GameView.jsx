@@ -7,7 +7,7 @@ const Player2GameView = ({ setPlayer1Turn, player1Cells }) => {
   }
   return (
     <div>
-      <h1>Player1GameView</h1>
+      <h1>Player2GameView</h1>
       <div className="flex justify-center">
         <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10">
           {BOARD_ARR.map((row, rowIndex) => (

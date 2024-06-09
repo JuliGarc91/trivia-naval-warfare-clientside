@@ -14,6 +14,18 @@ const GameSetup = () => {
   const [displayGame, setDisplayGame] = useState(false);
   const [player1Turn, setPlayer1Turn] = useState(null);
 
+  const [player1HitCoordinates, setPlayer1HitCoordinates] = useState([]);
+  const [player1MissCoordinates, setPlayer1MissCoordinates] = useState([]);
+
+  const [player2HitCoordinates, setPlayer2HitCoordinates] = useState([]);
+  const [player2MissCoordinates, setPlayer2MissCoordinates] = useState([]);
+
+  function switchTurnWithDelay() {
+    setTimeout(() => {
+      setPlayer1Turn(!player1Turn);
+    }, 5000);
+  }
+
   return (
     <div>
       <h1>GameSetup</h1>
@@ -39,14 +51,22 @@ const GameSetup = () => {
       {displayGame &&
         (player1Turn ? (
           <Player1GameView
+            player1Turn={player1Turn}
             setPlayer1Turn={setPlayer1Turn}
             player2Cells={player2Cells}
             setPlayer2Cells={setPlayer2Cells}
+            player1HitCoordinates={player1HitCoordinates}
+            setPlayer1HitCoordinates={setPlayer1HitCoordinates}
+            player1MissCoordinates={player1MissCoordinates}
+            setPlayer1MissCoordinates={setPlayer1MissCoordinates}
+            switchTurnWithDelay={switchTurnWithDelay}
           />
         ) : (
           <Player2GameView
             setPlayer1Turn={setPlayer1Turn}
             player1Cells={player1Cells}
+            // hitCoordinates={hitCoordinates}
+            // missCoordinates={missCoordinates}
           />
         ))}
     </div>

@@ -1,31 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { BOARD_ARR } from "./gameInfo";
 
-const Player1GameView = ({ setPlayer1Turn, player2Cells, setPlayer2Cells }) => {
-  const [hitCoordinates, setHitCoordinates] = useState([]);
-  const [missCoordinates, setMissCoordinates] = useState([]);
-
+const Player1GameView = ({
+  player1Turn,
+  setPlayer1Turn,
+  player2Cells,
+  setPlayer2Cells,
+  player1HitCoordinates,
+  setPlayer1HitCoordinates,
+  player1MissCoordinates,
+  setPlayer1MissCoordinates,
+  switchTurnWithDelay,
+}) => {
   function handleAttack(rowIndex, cellIndex) {
     let hit = false;
     if (player2Cells.length > 0) {
       for (const coordinates of player2Cells) {
         if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
           hit = true;
-          setHitCoordinates((prev) => [...prev, coordinates]);
+          setPlayer1HitCoordinates((prev) => [...prev, coordinates]);
           const updatedCoordinates = player2Cells.filter(
             (location) =>
               location.row !== rowIndex || location.cell !== cellIndex
           );
           setPlayer2Cells(updatedCoordinates);
+          switchTurnWithDelay();
           break;
         }
       }
       if (!hit) {
         console.log("Miss");
-        setMissCoordinates((prev) => [
+        setPlayer1MissCoordinates((prev) => [
           ...prev,
           { row: rowIndex, cell: cellIndex },
         ]);
+        switchTurnWithDelay();
       }
     } else {
       console.log("Game Over");
@@ -33,13 +42,13 @@ const Player1GameView = ({ setPlayer1Turn, player2Cells, setPlayer2Cells }) => {
   }
 
   function handleCellColoring(rowIndex, cellIndex) {
-    for (const coordinates of hitCoordinates) {
+    for (const coordinates of player1HitCoordinates) {
       if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
         return "red";
       }
     }
 
-    for (const coordinates of missCoordinates) {
+    for (const coordinates of player1MissCoordinates) {
       if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
         return "grey";
       }
