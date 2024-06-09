@@ -3,6 +3,7 @@ import Player1Setup from "./Player1Setup";
 import Player2Setup from "./Player2Setup";
 import Player1GameView from "./Player1GameView";
 import Player2GameView from "./Player2GameView";
+import GameOver from "./GameOver";
 
 const GameSetup = () => {
   const [player1Ready, setPlayer1Ready] = useState(false);
@@ -19,6 +20,9 @@ const GameSetup = () => {
 
   const [player2HitCoordinates, setPlayer2HitCoordinates] = useState([]);
   const [player2MissCoordinates, setPlayer2MissCoordinates] = useState([]);
+
+  const [gameFinished, setGameFinished] = useState(false);
+  const [winner, setWinner] = useState("");
 
   function switchTurnWithDelay() {
     setTimeout(() => {
@@ -49,6 +53,7 @@ const GameSetup = () => {
         />
       )}
       {displayGame &&
+        !gameFinished &&
         (player1Turn ? (
           <Player1GameView
             player1Turn={player1Turn}
@@ -60,10 +65,11 @@ const GameSetup = () => {
             player1MissCoordinates={player1MissCoordinates}
             setPlayer1MissCoordinates={setPlayer1MissCoordinates}
             switchTurnWithDelay={switchTurnWithDelay}
+            setGameFinished={setGameFinished}
+            setWinner={setWinner}
           />
         ) : (
           <Player2GameView
-            // setPlayer1Turn={setPlayer1Turn}
             player1Cells={player1Cells}
             setPlayer1Cells={setPlayer1Cells}
             player2HitCoordinates={player2HitCoordinates}
@@ -71,10 +77,11 @@ const GameSetup = () => {
             player2MissCoordinates={player2MissCoordinates}
             setPlayer2MissCoordinates={setPlayer2MissCoordinates}
             switchTurnWithDelay={switchTurnWithDelay}
-            // hitCoordinates={hitCoordinates}
-            // missCoordinates={missCoordinates}
+            setGameFinished={setGameFinished}
+            setWinner={setWinner}
           />
         ))}
+      {gameFinished && <GameOver winner={winner} />}
     </div>
   );
 };

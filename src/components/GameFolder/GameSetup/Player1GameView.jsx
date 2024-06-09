@@ -11,6 +11,8 @@ const Player1GameView = ({
   player1MissCoordinates,
   setPlayer1MissCoordinates,
   switchTurnWithDelay,
+  setGameFinished,
+  setWinner,
 }) => {
   function handleAttack(rowIndex, cellIndex) {
     let hit = false;
@@ -20,6 +22,8 @@ const Player1GameView = ({
           hit = true;
           if (hit && player2Cells.length === 1) {
             console.log("Game Over Player 1 Wins");
+            setGameFinished(true);
+            setWinner("Player 1");
           }
           setPlayer1HitCoordinates((prev) => [...prev, coordinates]);
           const updatedCoordinates = player2Cells.filter(
