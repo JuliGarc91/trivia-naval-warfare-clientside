@@ -81,16 +81,17 @@ const Player1GameView = ({
   }
 
   return (
-    <div>
-      <h1>Player2GameView</h1>
+    <div className="bg-zinc-700/90 p-8 flex flex-col">
+      <h1 className="text-6xl text-center" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>Player 2</h1>
+      <br/>
       <div className="flex justify-center">
-        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10">
+        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10 bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
           {BOARD_ARR.map((row, rowIndex) => (
             <div className="contents" key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <div
                   key={cellIndex}
-                  className="border-2 border-black text-center text-transparent"
+                  className="border-2 border-black text-center text-transparent bg-transparent"
                   onClick={() => handleAttack(rowIndex, cellIndex)}
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
