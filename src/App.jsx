@@ -6,7 +6,7 @@ import HowTo from "./components/Howto";
 import Nav from "./components/Nav"
 import GameSetup from "./components/GameFolder/GameSetup/GameSetup";
 
-const App = () => 
+const App = () => {
 
   const NavBarWrapper = () => {
     const location = useLocation()
