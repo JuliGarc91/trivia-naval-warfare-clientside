@@ -21,18 +21,18 @@ const About_Mission = () => {
         {/* first landing page content */}
       {/* </div>  */}
       {/* https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg */}
-      <div className="">
+      <div className="h-screen bg-fixed" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')" }}>
         <div className="flex flex-row items-center justify-center mx-5 sm:mx-24 lg:mx-48">
           <div className="border-4 border-black rounded-full p-5"></div>
           <hr className="border-2 border-black w-24" />
-          <h1 className=" text-black font-bold text-4xl md:text-5xl lg:text-6xl my-12 py-5 border-4 px-5 border-black text-center">
+          <h1 className=" text-black font-bold text-4xl md:text-5xl lg:text-6xl my-12 py-5 border-4 px-5 border-black text-center" style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>
             The Mission
           </h1>
           <hr className="border-2 border-black w-24" />
           <div className="border-4 border-black rounded-full p-5"></div>
         </div>
         <div className="mx-5 sm:mx-10 md:mx-24 lg:mx-48 px-10 border-4 border-black mb-48" style={{ fontFamily: "Kode Mono, monospace", fontStyle: 'normal' }}>
-          <h2 className="text-4xl pt-16 pb-5 font-semibold">Briefing:</h2>
+          <h2 className="text-4xl pt-16 pb-5 font-semibold" >Briefing:</h2>
           <hr className="border-2" />
           <p className="text-xl lg:text-3xl py-8">
             Trivia Naval Warfare (TNW) was crafted with the aim of delivering an
