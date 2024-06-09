@@ -67,7 +67,7 @@ const Player2Setup = ({
           Vertical
         </button>
         <button
-          className="border-2 border-black p-2 bg-red-300"
+          className="border-2 border-black p-2 bg-wine hover:bg-red-300 hover:text-black"
           onClick={handleClearBoard}
         >
           Clear Board
