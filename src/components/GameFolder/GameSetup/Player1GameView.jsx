@@ -1,29 +1,85 @@
 import React, { useState } from "react";
 import { BOARD_ARR } from "./gameInfo";
 
-const Player1GameView = ({ setPlayer1Turn, player2Cells }) => {
-  const [cellsAttacked, setCellsAttacked] = useState([]);
+const Player1GameView = ({
+  player1Turn,
+  setPlayer1Turn,
+  player2Cells,
+  setPlayer2Cells,
+  player1HitCoordinates,
+  setPlayer1HitCoordinates,
+  player1MissCoordinates,
+  setPlayer1MissCoordinates,
+  switchTurnWithDelay,
+  setGameFinished,
+  setWinner,
+  player1ClickedCells,
+  setPlayer1ClickedCells,
+}) => {
+  // const [isDisabled, setIsDisabled] = useState(false);
 
   function handleAttack(rowIndex, cellIndex) {
-    const cellTarget = { row: rowIndex, cell: cellIndex };
+    // Check to see if the cell has already been selected, if it has return nothing since its an invalid cell
+    if (
+      player1ClickedCells.some(
+        (coordinates) =>
+          coordinates.row === rowIndex && coordinates.cell === cellIndex
+      )
+    ) {
+      return;
+    }
 
-    const alreadyAttacked = cellsAttacked.some((coordinates) => {
-      if (!coordinates) return false;
-      return coordinates.row === rowIndex && coordinates.cell === cellIndex;
-    });
-
-    if (!alreadyAttacked) {
-      setCellsAttacked((prevCells) => [...prevCells, cellTarget]);
+    // setIsDisabled(true);
+    let hit = false;
+    setPlayer1ClickedCells((prevCells) => [
+      ...prevCells,
+      { row: rowIndex, cell: cellIndex },
+    ]);
+    if (player2Cells.length > 0) {
+      for (const coordinates of player2Cells) {
+        if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
+          hit = true;
+          if (hit && player2Cells.length === 1) {
+            console.log("Game Over Player 1 Wins");
+            setGameFinished(true);
+            setWinner("Player 1");
+          }
+          setPlayer1HitCoordinates((prev) => [...prev, coordinates]);
+          const updatedCoordinates = player2Cells.filter(
+            (location) =>
+              location.row !== rowIndex || location.cell !== cellIndex
+          );
+          setPlayer2Cells(updatedCoordinates);
+          switchTurnWithDelay();
+          break;
+        }
+      }
+      if (!hit) {
+        console.log("Miss");
+        setPlayer1MissCoordinates((prev) => [
+          ...prev,
+          { row: rowIndex, cell: cellIndex },
+        ]);
+        switchTurnWithDelay();
+      }
+    } else {
+      console.log("Game Over");
     }
   }
 
-  function handleAttackColoring(rowIndex, cellIndex) {
-    const isAttacked = cellsAttacked.some(
-      (coordinates) =>
-        coordinates.row === rowIndex && coordinates.cell === cellIndex
-    );
+  function handleCellColoring(rowIndex, cellIndex) {
+    for (const coordinates of player1HitCoordinates) {
+      if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
+        return "red";
+      }
+    }
 
-    return isAttacked ? "blue" : "white";
+    for (const coordinates of player1MissCoordinates) {
+      if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
+        return "grey";
+      }
+    }
+    return "white";
   }
 
   return (
@@ -38,8 +94,9 @@ const Player1GameView = ({ setPlayer1Turn, player2Cells }) => {
                   key={cellIndex}
                   className="border-2 border-black text-center text-transparent"
                   onClick={() => handleAttack(rowIndex, cellIndex)}
+                  // onClick={()=> !isDisabled ? handleAttack(rowIndex, cellIndex): null}
                   style={{
-                    backgroundColor: handleAttackColoring(rowIndex, cellIndex),
+                    backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}
                 >
                   {cell}
