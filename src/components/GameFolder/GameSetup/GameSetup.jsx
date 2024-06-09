@@ -34,8 +34,8 @@ const GameSetup = () => {
   }
 
   return (
-    <div className="h-screen bg-cover flex flex-row justify-center items-center text-white" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717946598/battleship%20app/rocks.jpg')" }}>
-      <h1>GameSetup</h1>
+    <div className="h-screen bg-cover flex flex-row justify-center items-center text-white" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717948755/battleship%20app/coarse-sand.jpg')" }}>
+      {/* <h1>GameSetup</h1> */}
       {!player1Ready && !displayGame && (
         <Player1Setup
           player1Ready={player1Ready}

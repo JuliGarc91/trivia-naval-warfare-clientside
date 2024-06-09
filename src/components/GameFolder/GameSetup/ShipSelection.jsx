@@ -10,9 +10,9 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
       style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}
     >
       <div className="border-4 border-black">
-        <h1 className="border-1 border-black text-center border-b-4">Fleet</h1>
+        <h1 className="border-1 border-black text-center border-b-4 text-black">Fleet</h1>
         <fieldset className=" border-black">
-          <legend className="text-center">Select A Ship:</legend>
+          <legend className="text-center text-black">Select A Ship:</legend>
           <div className="bg-red-500 p-1">
             <input
               type="radio"
