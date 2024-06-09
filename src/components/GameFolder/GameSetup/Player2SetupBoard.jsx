@@ -252,7 +252,7 @@ const Player2SetupBoard = ({
   return (
     <div className="mb-5">
       <div className="flex justify-center">
-        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10">
+        <div className="w-[40vw] h-[25vw] grid grid-rows-10 grid-cols-10 bg-white bg-cover" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717947883/battleship%20app/water.jpg')"}}>
           {BOARD_ARR.map((row, rowIndex) => (
             <div className="contents" key={rowIndex}>
               {row.map((cell, cellIndex) => (
