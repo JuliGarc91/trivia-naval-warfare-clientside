@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BOARD_ARR } from "./gameInfo";
 
 const Player1GameView = ({
@@ -16,6 +16,8 @@ const Player1GameView = ({
   player2ClickedCells,
   setPlayer2ClickedCells,
 }) => {
+  const [playerSelectedCell, setPlayerSelectedCell] = useState(false);
+
   function handleAttack(rowIndex, cellIndex) {
     let hit = false;
 
@@ -27,6 +29,8 @@ const Player1GameView = ({
     ) {
       return;
     }
+
+    setPlayerSelectedCell(true);
 
     setPlayer2ClickedCells((prev) => [
       ...prev,
@@ -63,6 +67,9 @@ const Player1GameView = ({
     } else {
       console.log("Game Over");
     }
+    setTimeout(() => {
+      setPlayerSelectedCell(false);
+    }, 1000);
   }
 
   function handleCellColoring(rowIndex, cellIndex) {
@@ -92,8 +99,17 @@ const Player1GameView = ({
               {row.map((cell, cellIndex) => (
                 <div
                   key={cellIndex}
+// section in question ------------------------------------------------------------------------------------------------------------------------------------
                   className="border-2 border-black text-center text-transparent bg-transparent"
                   onClick={() => handleAttack(rowIndex, cellIndex)}
+
+                  className="border-2 border-black text-center text-transparent"
+                  onClick={() =>
+                    !playerSelectedCell
+                      ? handleAttack(rowIndex, cellIndex)
+                      : null
+                  }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}

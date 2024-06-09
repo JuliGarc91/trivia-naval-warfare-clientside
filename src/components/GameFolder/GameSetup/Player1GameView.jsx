@@ -16,10 +16,9 @@ const Player1GameView = ({
   player1ClickedCells,
   setPlayer1ClickedCells,
 }) => {
-  // const [isDisabled, setIsDisabled] = useState(false);
+  const [playerSelectedCell, setPlayerSelectedCell] = useState(false);
 
   function handleAttack(rowIndex, cellIndex) {
-    // Check to see if the cell has already been selected, if it has return nothing since its an invalid cell
     if (
       player1ClickedCells.some(
         (coordinates) =>
@@ -29,12 +28,14 @@ const Player1GameView = ({
       return;
     }
 
-    // setIsDisabled(true);
+    setPlayerSelectedCell(true);
+
     let hit = false;
     setPlayer1ClickedCells((prevCells) => [
       ...prevCells,
       { row: rowIndex, cell: cellIndex },
     ]);
+
     if (player2Cells.length > 0) {
       for (const coordinates of player2Cells) {
         if (coordinates.row === rowIndex && coordinates.cell === cellIndex) {
@@ -65,6 +66,10 @@ const Player1GameView = ({
     } else {
       console.log("Game Over");
     }
+
+    setTimeout(() => {
+      setPlayerSelectedCell(false);
+    }, 1000);
   }
 
   function handleCellColoring(rowIndex, cellIndex) {
@@ -93,9 +98,18 @@ const Player1GameView = ({
               {row.map((cell, cellIndex) => (
                 <div
                   key={cellIndex}
-                  className="border-2 border-black text-center text-transparent bg-transparent"
-                  onClick={() => handleAttack(rowIndex, cellIndex)}
+// check section if ok up until line 112 ------------------------------------------------------------------------------------------------------------------------------------
+                   className="border-2 border-black text-center text-transparent bg-transparent"
+                   onClick={() => handleAttack(rowIndex, cellIndex)}
                   // onClick={()=> !isDisabled ? handleAttack(rowIndex, cellIndex): null}
+
+                  className="border-2 border-black text-center text-transparent"
+                  onClick={() =>
+                    !playerSelectedCell
+                      ? handleAttack(rowIndex, cellIndex)
+                      : null
+                  }
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                   style={{
                     backgroundColor: handleCellColoring(rowIndex, cellIndex),
                   }}
