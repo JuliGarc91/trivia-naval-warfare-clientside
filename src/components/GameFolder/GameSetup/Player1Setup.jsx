@@ -28,7 +28,7 @@ const Player1Setup = ({
   }
 
   return (
-    <div style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
+    <div className="bg-wine/90 border-black border-4 p-8" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
       <h1>Player1Setup</h1>
       <ShipSelection
         shipSelected={shipSelected}

@@ -37,13 +37,13 @@ const Player2Setup = ({
   }
 
   return (
-    <div style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
-      <h1>Player2Setup</h1>
+    <div className="bg-wine/90 border-black border-4 p-8" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
+      <h1 className="text-center text-6xl">Player2Setup</h1>
       <ShipSelection
         shipSelected={shipSelected}
         setShipSelected={setShipSelected}
       />
-      <div>
+      <div className="flex justify-center">
         <button
           className="bg-light-navy border-2 border-black p-2 mr-2"
           onClick={() => setAxisShipDirection("horizontal")}
@@ -73,6 +73,7 @@ const Player2Setup = ({
           Clear Board
         </button>
       </div>
+      <br/>
       <div>
         {player2Cells.length === 17 && (
           <button

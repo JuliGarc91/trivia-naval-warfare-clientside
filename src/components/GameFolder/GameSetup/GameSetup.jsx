@@ -34,8 +34,9 @@ const GameSetup = () => {
   }
 
   return (
-    <div className="h-screen bg-cover flex flex-row justify-center items-center text-white" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717948755/battleship%20app/coarse-sand.jpg')" }}>
-      {/* <h1>GameSetup</h1> */}
+    <>
+    <br/>
+    <div className="h-screen bg-cover flex flex-row justify-center items-center text-white" style={{ backgroundImage: "url('https://res.cloudinary.com/dwygxzqku/image/upload/v1717950846/battleship%20app/controllers.jpg')" }}>
       {!player1Ready && !displayGame && (
         <Player1Setup
           player1Ready={player1Ready}
@@ -90,6 +91,7 @@ const GameSetup = () => {
         ))}
       {gameFinished && <GameOver winner={winner} />}
     </div>
+    </>
   );
 };
 

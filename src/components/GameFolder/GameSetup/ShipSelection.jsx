@@ -5,6 +5,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
     setShipSelected(e.target.value);
   }
   return (
+    <div className="flex justify-center">
     <div
       className="w-72 my-5 bg-white"
       style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}
@@ -65,6 +66,7 @@ const ShipSelection = ({ shipSelected, setShipSelected }) => {
           </div>
         </fieldset>
       </div>
+    </div>
     </div>
   );
 };
