@@ -11,7 +11,7 @@ const HowTo = () => {
                 <h1 className=" text-6xl text-center text">Learn to Play Cadet</h1>
                 <h3 className="text-center text-3xl">Here is an over view of the misson</h3>
                 <br/>
-                <div className="flex flex-col gap-8 w-[50vw] m-auto overflow-y-auto">
+                <div className="flex flex-col gap-8 w-[50vw] m-auto h-[75vh] overflow-y-auto">
                     <p className="how-to-p text-2xl">
                         Naval Trivia Warfare combines the classic game of Battleship with educational trivia questions.
                         Players must answer a trivia question correctly to launch an attack on their opponent's fleet.
