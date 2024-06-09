@@ -5,9 +5,9 @@ import '../App.css'
 const TrainingGrounds = () => {
   return (
     <>
-        <div className='h-screen flex items-center justify-center flex-col gap-4'>
-        <div className='bg-forest/60 shadow-2xl backdrop-brightness-150 backdrop-blur-md bg-opacity-90 w-[65vw] h-auto relative z-10'>
-            <h1 className="text-4xl text-white p-2 text-center border-2 border-black" style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>Training Grounds</h1>
+        <div className='h-auto flex items-center justify-center flex-col gap-4'>
+        <div className='bg-forest/60 shadow-2xl backdrop-brightness-150 backdrop-blur-md bg-opacity-90 w-[65vw] h-auto relative z-10 mt-[10vh]'>
+            <h1 className="text-6xl text-white p-2 text-center border-2 border-black" style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>Training Grounds</h1>
         </div>
             <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted style={{ zIndex: -1 }}>
                 {/* maybe a ternary to show alt background in case video doesn't work */}
