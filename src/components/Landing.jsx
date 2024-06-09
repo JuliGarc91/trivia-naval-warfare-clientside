@@ -19,7 +19,7 @@ const Landing = () => {
           alt="img-of-sailor-at-sea"
           />
           <button
-          className="p-2 text-6xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-wine/90 hover:bg-forest-btn text-white py-2 px-4 rounded"
+          className="p-2 text-6xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-wine/90 hover:bg-forest-btn text-white py-2 px-4 rounded animate-pulse pt-3"
           onClick={() => handleClick()}
           style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>Play Game Here</button>
           <span className=' text-yellow-400' style={{ fontFamily: "Kode Mono, monospace", fontStyle: 'normal' }}>Enter the Field... If you dare '_'</span>
