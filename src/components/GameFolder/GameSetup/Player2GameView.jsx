@@ -77,7 +77,7 @@ const Player1GameView = ({
         return "grey";
       }
     }
-    return "white";
+    return "transparent";
   }
 
   return (
