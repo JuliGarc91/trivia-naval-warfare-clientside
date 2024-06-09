@@ -37,7 +37,7 @@ const Player2Setup = ({
   }
 
   return (
-    <div className="bg-wine/90 border-black border-4 p-8" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
+    <div className="bg-zinc-700/80 border-black border-4 p-8" style={{ fontFamily: "Kode Mono, monospace", fontStyle: "normal" }}>
       <h1 className="text-center text-6xl">Player2Setup</h1>
       <ShipSelection
         shipSelected={shipSelected}
@@ -49,7 +49,7 @@ const Player2Setup = ({
           onClick={() => setAxisShipDirection("horizontal")}
           style={
             axisShipDirection === "horizontal"
-              ? { backgroundColor: "#d3d3d3", boxShadow: "5px 5px 5px black" }
+              ? { backgroundColor: "#d3d3d3", color: "black", boxShadow: "5px 5px 5px black" }
               : null
           }
         >
@@ -60,7 +60,7 @@ const Player2Setup = ({
           onClick={() => setAxisShipDirection("vertical")}
           style={
             axisShipDirection === "vertical"
-              ? { backgroundColor: "#d3d3d3", boxShadow: "5px 5px 5px black" }
+              ? { backgroundColor: "#d3d3d3",color: "black", boxShadow: "5px 5px 5px black" }
               : null
           }
         >
@@ -74,7 +74,7 @@ const Player2Setup = ({
         </button>
       </div>
       <br/>
-      <div>
+      <div className="flex justify-center">
         {player2Cells.length === 17 && (
           <button
             className="border-2 border-black p-2 mt-2 bg-green-400"
@@ -84,6 +84,7 @@ const Player2Setup = ({
           </button>
         )}
       </div>
+      <br/>
       <Player2SetupBoard
         player2Ready={player2Ready}
         setPlayer2Ready={setPlayer2Ready}
