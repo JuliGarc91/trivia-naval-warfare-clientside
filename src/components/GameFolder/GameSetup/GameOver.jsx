@@ -8,7 +8,7 @@ const GameOver = ({ winner }) => {
       <br/>
       <img src="https://res.cloudinary.com/dwygxzqku/image/upload/v1717956470/battleship%20app/celebrate.webp" alt="sailors celebrating" className="h-[40vh] border-2 border-yellow-600 p-2"/>
       <br/>
-      <p className="text-4xl text-yellow-400 animate-bounce" style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>{`Congratulations ${winner} you win!`}</p>
+      <p className="text-4xl text-yellow-400 animate-bounce" style={{ fontFamily: "Black Ops One, system-ui", fontStyle: 'normal' }}>{`⭐ Congratulations ${winner} you win! ⭐`}</p>
       <br/>
       <Link to="/">
         <button className="bg-forest border-2 border-black p-2 hover:bg-light-navy text-xl"
