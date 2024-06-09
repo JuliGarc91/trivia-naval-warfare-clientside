@@ -100,8 +100,8 @@ const Player1GameView = ({
                 <div
                   key={cellIndex}
 // section in question ------------------------------------------------------------------------------------------------------------------------------------
-                  className="border-2 border-black text-center text-transparent bg-transparent"
-                  onClick={() => handleAttack(rowIndex, cellIndex)}
+                  // className="border-2 border-black text-center text-transparent bg-transparent"
+                  // onClick={() => handleAttack(rowIndex, cellIndex)}
 
                   className="border-2 border-black text-center text-transparent"
                   onClick={() =>

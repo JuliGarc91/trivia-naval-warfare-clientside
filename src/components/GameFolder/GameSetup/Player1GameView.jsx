@@ -99,8 +99,8 @@ const Player1GameView = ({
                 <div
                   key={cellIndex}
 // check section if ok up until line 112 ------------------------------------------------------------------------------------------------------------------------------------
-                   className="border-2 border-black text-center text-transparent bg-transparent"
-                   onClick={() => handleAttack(rowIndex, cellIndex)}
+                  //  className="border-2 border-black text-center text-transparent bg-transparent"
+                  //  onClick={() => handleAttack(rowIndex, cellIndex)}
                   // onClick={()=> !isDisabled ? handleAttack(rowIndex, cellIndex): null}
 
                   className="border-2 border-black text-center text-transparent"
