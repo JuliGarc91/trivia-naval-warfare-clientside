@@ -5,6 +5,7 @@ import About_Mission from "./components/About_Mission";
 import HowTo from "./components/Howto";
 import Nav from "./components/Nav"
 import GameSetup from "./components/GameFolder/GameSetup/GameSetup";
+import TrainingGrounds from "./components/TrainingGrounds";
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/game" element={<GameSetup />} />
         <Route path="/howto" element={<HowTo />}/>
+        <Route path="/training" element={<TrainingGrounds/>}/>
         <Route path="/mission_&_about" element={<About_Mission />}/>
       </Routes>
     </div>
